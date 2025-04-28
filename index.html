@@ -3,175 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stuscreative - Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #20232a;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #282c34;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .services, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .service, .project {
-            background: white;
-            padding: 20px;
-            flex: 1 1 250px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background-color: #20232a;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        a.social {
-            display: inline-block;
-            margin: 0 10px;
-            color: #333;
-        }
-
-        a:hover {
-            color: #0077cc;
-        }
-    </style>
+    <title>Stuscreative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png"> <!-- Icône du site -->
 </head>
 <body>
-
     <header>
-        <h1>Stuscreative</h1>
-        <p>Votre solution en télécom, informatique & digital</p>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Stuscreative" />
+            </div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <main>
+        <section id="accueil">
+            <h1>Bienvenue sur Stuscreative</h1>
+            <p>Votre solution en Télécoms, Informatique, Communication digitale et Graphisme.</p>
+        </section>
 
-    <section id="about">
-        <h2>À propos</h2>
-        <p>
-            Passionné de la technologie, nous sommes votre solution pour la maintenance 
-            et la mise en place de réseaux de télécommunications et informatique, électricité de bâtiment
-            ainsi que pour la communication digitale et le graphisme.
-        </p>
-    </section>   
-    <section id="services">
-        <h2>Nos Services</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Maintenance informatique</h3>
-                <p>Assistance technique, diagnostic et optimisation de vos systèmes.</p>
+        <section id="apropos">
+            <h2>À propos</h2>
+            <p>Passionné de la technologie, nous sommes votre solution pour la maintenance, les réseaux télécoms, installations électriques, communication digitale et graphisme.</p>
+        </section>
+
+        <section id="services">
+            <h2>Nos Services</h2>
+            <ul>
+                <li>Maintenance Informatique</li>
+                <li>Réseaux Télécoms</li>
+                <li>Installation électrique de bâtiment</li>
+                <li>Communication Digitale</li>
+                <li>Graphisme</li>
+            </ul>
+        </section>
+
+        <section id="projets">
+            <h2>Projets réalisés</h2>
+            <div class="projets-gallery">
+                <div class="projet-item">
+                    <img src="images/projet1.jpg" alt="Solution Wi-Fi LAN Controller">
+                    <p>Mise en place d’une solution Wi-Fi basé sur LAN controller</p>
+                </div>
+                <div class="projet-item">
+                    <img src="images/projet2.jpg" alt="Installation Starlink">
+                    <p>Installation d’un Wi-Fi et antenne Starlink à domicile</p>
+                </div>
+                <!-- Tu peux rajouter d'autres projets ici -->
             </div>
-            <div class="service">
-                <h3>Réseaux télécoms</h3>
-                <p>Conception et déploiement de réseaux câblés et sans fil.</p>
-            </div>
-            <div class="service">
-                <h3>Communication digitale</h3>
-                <p>Création de contenus, gestion des réseaux sociaux, publicité en ligne.</p>
-            </div>
-            <div class="service">
-                <h3>Graphisme</h3>
-                <p>Identité visuelle, logos, affiches, flyers et plus encore.</p>
-            </div>
-    <section id="services">
-  <h2>Services & Réalisations</h2>
+        </section>
 
-  <div>
-    <h3>Réseaux Télécoms</h3>
-    <p>Réseau LAN/Wi-Fi sécurisé avec contrôle centralisé.</p>
-    <ul>
-      <li><strong>Solution Wi-Fi entreprise X</strong></li>
-      <li><strong>Installation d’un Wi-Fi à domicile</strong></li>
-    </ul>
-  </div>
+        <section id="images">
+            <h2>Galerie</h2>
+            <p>À venir...</p>
+        </section>
 
-  <div>
-    <h3>Maintenance informatique</h3>
-    <p>Dépannage des ordinateurs et maintenance générale.</p>
-    <ul>
-      <li><strong>Ngengesport</strong> – Dépannage des ordinateurs</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Communication digitale</h3>
-    <p>Stratégie de marque et supports de communication impactants.</p>
-    <ul>
-      <li><strong>Projet en cours</strong> – Communication digitale personnalisée</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Graphisme</h3>
-    <p>Communication visuelle, design de logos et supports print.</p>
-    <ul>
-      <li><strong>Logo Les Inséparables Familly</strong></li>
-      <li><strong>Logo Novabuild</strong></li>
-      <li><strong>Affiches publicitaires et autres créations</strong></li>
-    </ul>
-  </div>
-</section>
-    <section id="projects">
-        <h2>Projet réalisé</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Solution Wi-Fi basée sur LAN Controller</h3>
-                <p>Mise en place d’un réseau Wi-Fi optimisé et sécurisé pour une entreprise, géré via un contrôleur LAN pour une meilleure performance et gestion centralisée.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:akimalifaustin6@gmail.com">akimalifaustin6@gmail.com</a></p>
-        <p>Suivez-nous sur :
-            <a href="https://www.instagram.com/stuscreative" class="social" target="_blank">Instagram</a> |
-            <a href="https://www.facebook.com/stuscreative" class="social" target="_blank">Facebook</a>
-        </p>
-    </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email : akimalifaustin6@gmail.com</p>
+            <p>Téléphone : +243 970 365 893</p>
+            <p>Instagram : <a href="https://www.instagram.com/Stuscreative" target="_blank">Stuscreative</a></p>
+            <p>Facebook : <a href="https://www.facebook.com/Stuscreative" target="_blank">Stuscreative</a></p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Stuscreative. Tous droits réservés.</p>
     </footer>
 
+    <!-- Optionnel: pour plus tard -->
+    <!-- <script src="scripts/script.js"></script> -->
 </body>
 </html>
