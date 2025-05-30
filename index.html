@@ -1,148 +1,316 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stuscreative - Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stuscreative - Portfolio</title>
+<style>
+  /* --- Couleurs & Styles globaux --- */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+  }
 
-        header {
-            background-color: #20232a;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+  header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
 
-        nav {
-            background-color: #282c34;
-            text-align: center;
-            padding: 10px 0;
-        }
+  nav {
+    background-color: #ff6600;
+    text-align: center;
+    padding: 12px 0;
+  }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+  nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
 
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+  nav a:hover {
+    color: #222;
+  }
 
-        .services, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+  section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
 
-        .service, .project {
-            background: white;
-            padding: 20px;
-            flex: 1 1 250px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-        footer {
-            background-color: #20232a;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
+  h2 {
+    color: #ff6600;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff6600;
+    padding-bottom: 5px;
+  }
 
-        a.social {
-            display: inline-block;
-            margin: 0 10px;
-            color: #333;
-        }
+  /* --- Services & Projets --- */
+  .services, .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-        a:hover {
-            color: #0077cc;
-        }
-    </style>
+  .service, .project {
+    background: white;
+    padding: 20px;
+    flex: 1 1 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 102, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+
+  .service:hover, .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(255, 102, 0, 0.35);
+  }
+
+  /* --- Galerie --- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+  }
+
+  .gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  /* --- Formulaire Contact --- */
+  form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(255, 102, 0, 0.2);
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ff6600;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+  }
+
+  form button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  form button:hover {
+    background-color: #cc5200;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+  a.social {
+    display: inline-block;
+    margin: 0 10px;
+    color: #ff6600;
+    font-weight: bold;
+  }
+
+  a.social:hover {
+    color: #cc5200;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 700px) {
+    nav a {
+      margin: 0 10px;
+      font-size: 1em;
+    }
+    .services, .projects {
+      flex-direction: column;
+    }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>Stuscreative</h1>
-        <p>VOTRE SOLUTION TÉLÉCOM, INFORMATIQUE & ÉLECTRICITÉ</p>
-    </header>
+<header>
+  <h1>Stuscreative</h1>
+  <p>VOTRE SOLUTION TÉLÉCOM, INFORMATIQUE & ÉLECTRICITÉ</p>
+</header>
 
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+  <a href="#about">À propos</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projets</a>
+  <a href="#gallery">Galerie</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <section id="about">
-        <h2>À propos</h2>
-        <p>
-            Passionné de la technologie, nous sommes votre solution pour la maintenance 
-            et la mise en place de réseaux de télécommunications et informatique,
-              Électricité de batiment et industrielle ainsi que pour la communication digitale et le design graphique.
-        </p>
-    </section>
+<section id="about" class="fade-section">
+  <h2>À propos</h2>
+  <p>
+    Passionné de la technologie, nous sommes votre solution pour la maintenance
+    et la mise en place de réseaux de télécommunications et informatique,
+    Électricité de batiment et industrielle ainsi que pour la communication digitale et le design graphique.
+  </p>
+</section>
 
-    <section id="services">
-        <h2>Nos Services</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Maintenance informatique</h3>
-                <p>Assistance technique, diagnostic et optimisation de vos systèmes.</p>
-            </div>
-            <div class="service">
-                <h3>Réseaux télécoms</h3>
-                <p>Conception et déploiement de réseaux câblés et sans fil, Diagnostique et propostion de solutions, panification des projet.</p>
-            </div>
-            <div class="service">
-                <h3>Électricité</h3>
-                <p>installation domestiqueet industielle, dépannage et diagnostique.</p>
-            </div>
-            <div class="service">
-                <h3>Communication digitale</h3>
-                <p>Création de contenus, gestion des réseaux sociaux, publicité en ligne.</p>
-            </div>
-            <div class="service">
-                <h3>Design Graphisme</h3>
-                <p>Identité visuelle, logos, affiches, flyers et plus encore.</p>
-            </div>
-        </div>
-    </section>
+<section id="services" class="fade-section">
+  <h2>Nos Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Maintenance informatique</h3>
+      <p>Assistance technique, diagnostic et optimisation de vos systèmes.</p>
+    </div>
+    <div class="service">
+      <h3>Réseaux télécoms</h3>
+      <p>Conception et déploiement de réseaux câblés et sans fil, Diagnostic et proposition de solutions, planification des projets.</p>
+    </div>
+    <div class="service">
+      <h3>Électricité</h3>
+      <p>Installation domestique et industrielle, dépannage et diagnostic.</p>
+    </div>
+    <div class="service">
+      <h3>Communication digitale</h3>
+      <p>Création de contenus, gestion des réseaux sociaux, publicité en ligne.</p>
+    </div>
+    <div class="service">
+      <h3>Design Graphisme</h3>
+      <p>Identité visuelle, logos, affiches, flyers et plus encore.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="projects">
-        <h2>Projet réalisé</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Solution Wi-Fi basée sur LAN Controller</h3>
-                <p>Mise en place d’un réseau Wi-Fi optimisé et sécurisé pour une entreprise, géré via un contrôleur LAN pour une meilleure performance et gestion centralisée.</p>
-            </div>
-        </div>
-    </section>
+<section id="projects" class="fade-section">
+  <h2>Projets réalisés</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Solution Wi-Fi basée sur LAN Controller</h3>
+      <p>Mise en place d’un réseau Wi-Fi optimisé et sécurisé pour une entreprise, géré via un contrôleur LAN pour une meilleure performance et gestion centralisée.</p>
+    </div>
+    <!-- Tu peux ajouter d'autres projets ici -->
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Téléphone : +243 970 365 893</p>
-        <p>Email : <a href="mailto:akimalifaustin6@gmail.com">akimalifaustin6@gmail.com</a></p>
-        <p>Suivez-nous sur :
-            <a href="https://www.instagram.com/stuscreative" class="social" target="_blank">Instagram</a> |
-            <a href="https://www.facebook.com/stuscreative" class="social" target="_blank">Facebook</a>
-        </p>
-    </section>
+<section id="gallery" class="fade-section">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400x250?text=Affiche+1" alt="Affiche 1" />
+    <img src="https://via.placeholder.com/400x250?text=Logo+1" alt="Logo 1" />
+    <img src="https://via.placeholder.com/400x250?text=Evenement+1" alt="Événement 1" />
+    <img src="https://via.placeholder.com/400x250?text=Affiche+2" alt="Affiche 2" />
+    <img src="https://via.placeholder.com/400x250?text=Logo+2" alt="Logo 2" />
+    <img src="https://via.placeholder.com/400x250?text=Evenement+2" alt="Événement 2" />
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Stuscreative. Tous droits réservés.</p>
-    </footer>
+<section id="contact" class="fade-section">
+  <h2>Contact</h2>
+  <form id="contactForm" onsubmit="return handleSubmit(event)">
+    <label for="name">Nom complet</label>
+    <input type="text" id="name" name="name" required />
 
+    <label for="email">Adresse Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+  <p style="text-align:center; margin-top: 15px;" id="formMessage"></p>
+
+  <p style="text-align:center; margin-top: 25px;">
+    Ou contactez-nous directement :
+    <br />Téléphone : +243 970 365 893
+    <br />Email : <a href="mailto:akimalifaustin6@gmail.com">akimalifaustin6@gmail.com</a>
+    <br />Suivez-nous sur :
+    <a href="https://www.instagram.com/stuscreative" class="social" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/stuscreative" class="social" target="_blank">Facebook</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Stuscreative. Tous droits réservés.</p>
+</footer>
+
+<script>
+  // Animation fade-in au scroll
+  function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+        change.target.classList.add('visible');
+      }
+    });
+  }
+
+  let options = {
+    threshold: [0.1]
+  };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.fade-section');
+
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
+
+  // Gestion formulaire contact (simulation en JS)
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formMessage = document.getElementById('formMessage');
+    formMessage.style.color = '#ff6600';
+    formMessage.textContent = 'Merci pour votre message ! Nous vous répondrons bientôt.';
+    event.target.reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>
 </body>
 </html>
