@@ -1,246 +1,148 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stuscreative - Accueil</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuscreative - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #20232a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #282c34;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .services, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service, .project {
+            background: white;
+            padding: 20px;
+            flex: 1 1 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #20232a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        a.social {
+            display: inline-block;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        a:hover {
+            color: #0077cc;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Stuscreative</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <h1>Stuscreative</h1>
+        <p>Votre solution en télécom, informatique & digital</p>
+    </header>
 
-<main>
-  <section class="hero">
-    <h2>Bienvenue chez Stuscreative</h2>
-    <p>Solutions en télécoms, informatique, électricité, communication digitale et graphisme.</p>
-  </section>
-</main>
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<footer>
-  <p>© 2025 Stuscreative - Tous droits réservés</p>
-</footer>
+    <section id="about">
+        <h2>À propos</h2>
+        <p>
+            Passionné de la technologie, nous sommes votre solution pour la maintenance 
+            et la mise en place de réseaux de télécommunications et informatique,
+              Électrivté de batiment et industrielle ainsi que pour la communication digitale et le design graphique.
+        </p>
+    </section>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À propos - Stuscreative</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Maintenance informatique</h3>
+                <p>Assistance technique, diagnostic et optimisation de vos systèmes.</p>
+            </div>
+            <div class="service">
+                <h3>Réseaux télécoms</h3>
+                <p>Conception et déploiement de réseaux câblés et sans fil, Diagnostique et propostion de solutions, panification des projet.</p>
+            </div>
+            <div class="service">
+                <h3>Électricité</h3>
+                <p>installation domestiqueet industielle, dépannage et diagnostique.</p>
+            </div>
+            <div class="service">
+                <h3>Communication digitale</h3>
+                <p>Création de contenus, gestion des réseaux sociaux, publicité en ligne.</p>
+            </div>
+            <div class="service">
+                <h3>Design Graphisme</h3>
+                <p>Identité visuelle, logos, affiches, flyers et plus encore.</p>
+            </div>
+        </div>
+    </section>
 
-<header>
-  <h1>Stuscreative</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <section id="projects">
+        <h2>Projet réalisé</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Solution Wi-Fi basée sur LAN Controller</h3>
+                <p>Mise en place d’un réseau Wi-Fi optimisé et sécurisé pour une entreprise, géré via un contrôleur LAN pour une meilleure performance et gestion centralisée.</p>
+            </div>
+        </div>
+    </section>
 
-<main>
-  <section>
-    <h2>Qui sommes-nous ?</h2>
-    <p>Passionné de la technologie, nous sommes votre solution pour la maintenance et la mise en place des réseaux de télécommunications et informatiques, installations électriques de bâtiment ainsi que la communication digitale, média et graphisme.</p>
-  </section>
-</main>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Téléphone : +243 970 365 893</p>
+        <p>Email : <a href="mailto:akimalifaustin6@gmail.com">akimalifaustin6@gmail.com</a></p>
+        <p>Suivez-nous sur :
+            <a href="https://www.instagram.com/stuscreative" class="social" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com/stuscreative" class="social" target="_blank">Facebook</a>
+        </p>
+    </section>
 
-<footer>
-  <p>© 2025 Stuscreative - Tous droits réservés</p>
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services - Stuscreative</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <h1>Stuscreative</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section>
-    <h2>Nos Services</h2>
-    <ul>
-      <li>Maintenance informatique</li>
-      <li>Réseaux télécoms (LAN/Wi-Fi sécurisé)</li>
-      <li>Installation électrique de bâtiment</li>
-      <li>Communication digitale</li>
-      <li>Graphisme (logos, affiches, couvertures)</li>
-    </ul>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Stuscreative - Tous droits réservés</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Stuscreative. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projets - Stuscreative</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <h1>Stuscreative</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section>
-    <h2>Projets Réalisés</h2>
-    <ul>
-      <li>Mise en place d'une solution Wi-Fi basée sur LAN Controller</li>
-      <li>Installation de Wi-Fi et antenne Starlink à domicile</li>
-      <li>Stratégie de marque et supports de communication</li>
-      <li>Conception du logo pour Les Inséparables Familly</li>
-      <li>Logo Novabuild</li>
-      <li>Logo pour Club Construction Moderne</li>
-      <li>Affiches professionnelles et couvertures</li>
-    </ul>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Stuscreative - Tous droits réservés</p>
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact - Stuscreative</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <h1>Stuscreative</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section>
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> akimalifaustin6@gmail.com</p>
-    <p><strong>Téléphone :</strong> +243970365893</p>
-    <p><strong>Instagram :</strong> <a href="https://instagram.com/stuscreative" target="_blank">@stuscreative</a></p>
-    <p><strong>Facebook :</strong> <a href="https://facebook.com/stuscreative" target="_blank">@stuscreative</a></p>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Stuscreative - Tous droits réservés</p>
-</footer>
-
-</body>
-</html>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 30px;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-
